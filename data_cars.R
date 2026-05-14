@@ -1,13 +1,15 @@
 summary(mtcars)
-ratarata<-mean(mtcars$mpg)
-n<-length(mtcars)
-status <- numeric(n)
+# Hitung rata-rata & jumlah baris
+ratarata <- mean(mtcars$mpg)
+n <- nrow(mtcars) # Gunakan nrow untuk baris
+status <- character(n) # Gunakan character untuk teks
+
 for (i in 1:n){
-  if (mtcars$mpg[i]>ratarata){
-    status[i]<-'tinggi'
+  if (mtcars$mpg[i] > ratarata){
+    status[i] <- 'tinggi'
+  } else {
+    status[i] <- 'rendah'
   }
-  else
-    status<-append(status,'rendah')
 }
 
 hist(mtcars$mpg)
